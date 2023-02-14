@@ -1,0 +1,41 @@
+{% extends 'base-front-page.html.twig' %}
+
+{% block title %}
+	ALPHA - Demander Remorquage
+{% endblock %}
+
+{% block titre %}
+	Demander Remorquage
+{% endblock %}
+
+{% block text %}
+	Envoyer une demande de remorquage.
+{% endblock %}
+
+{% block breadcr %}
+	Demander Remorquage
+{% endblock %}
+{% block body %}
+<!-- ======= Demander remorquage Section ======= -->
+	<section id="get-a-quote" class="get-a-quote">
+		<div class="container" data-aos="fade-up">
+			<div class="row g-0">
+				<div class="col-lg-5 quote-bg" style="background-image: url(assets/img/quote-bg.jpg);"></div>
+
+				<div class="col-lg-7">
+					<div class="php-email-form">
+						<h3>
+							Demander remorquage
+						</h3>
+						<p>
+							Insérer les informations nécessaires pour votre demande
+						</p>
+						{{ include('front/_form.html.twig') }}
+					</div>
+				</div>
+				<!-- End Quote Form -->
+			</div>
+		</div>
+	</section>
+	<!-- End Demander remorquage Section -->
+{% endblock %}

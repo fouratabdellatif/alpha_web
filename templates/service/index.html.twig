@@ -1,0 +1,50 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}
+	Services
+{% endblock %}
+{% block stylesheets %}
+{{parent()}}
+
+<!-- Custom styles for this template-->
+<link href="{{ asset('admin/css/sb-admin-2.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('front/css/style.css') }}" />
+
+{% endblock %}
+{% block body %}
+<div class="table-wrapper" style="margin :50px;">
+	<h1>Services</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Libelle Service</th>
+				<th>Nom Service</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for service in services %}
+				<tr>
+					<td>{{ service.libelleService }}</td>
+					<td>{{ service.nomService }}</td>
+					<td>
+						<a href="{{ path('app_service_show', {'id': service.id}) }}">show</a>
+						<a href="{{ path('app_service_edit', {'id': service.id}) }}">edit</a>
+						<form method="post" action="{{ path('app_service_delete', {'id': service.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+							<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ service.id) }}">
+							<button class="btn">delete</button>
+						</form>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="4">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a href="{{ path('app_service_new') }}">Create new</a>
+</div>
+{% endblock %}

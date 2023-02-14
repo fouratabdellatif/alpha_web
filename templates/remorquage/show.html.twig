@@ -1,0 +1,45 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Remorquage
+{% endblock %}
+
+{% block body %}
+	<div class="table-wrapper">
+		<h1>Remorquage</h1>
+
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>NameRemorquage</th>
+					<td>{{ remorquage.nameRemorquage }}</td>
+				</tr>
+				<tr>
+					<th>Prenom</th>
+					<td>{{ remorquage.prenom }}</td>
+				</tr>
+				<tr>
+					<th>EmailRemorquage</th>
+					<td>{{ remorquage.emailRemorquage }}</td>
+				</tr>
+				<tr>
+					<th>Password</th>
+					<td>{{ remorquage.password }}</td>
+				</tr>
+				<tr>
+					<th>NumeroTel</th>
+					<td>{{ remorquage.numeroTel }}</td>
+				</tr>
+				<tr>
+					<th>Service</th>
+					<td>{{ remorquage.serv.libelleService }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<a href="{{ path('app_remorquage_index') }}">back to list</a>
+
+		<a href="{{ path('app_remorquage_edit', {'id': remorquage.id}) }}">edit</a>
+
+		{{ include('remorquage/_delete_form.html.twig') }}
+	</div>
+{% endblock %}

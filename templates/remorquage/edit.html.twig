@@ -1,0 +1,16 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Edit Remorquage
+{% endblock %}
+
+{% block body %}
+	<div class="table-wrapper">
+		<h1>Edit Remorquage</h1>
+
+		{{ include('remorquage/_form.html.twig', {'button_label': 'Update'}) }}
+
+		<a href="{{ path('app_remorquage_index') }}">back to list</a>
+
+		{{ include('remorquage/_delete_form.html.twig') }}
+	</div>
+{% endblock %}

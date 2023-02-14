@@ -1,0 +1,29 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Service
+{% endblock %}
+
+{% block body %}
+	<div class="table-wrapper">
+		<h1>Service</h1>
+
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>Libelle Service</th>
+					<td>{{ service.libelleService }}</td>
+				</tr>
+				<tr>
+					<th>Nom Service</th>
+					<td>{{ service.nomService }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<a href="{{ path('app_service_index') }}">back to list</a>
+
+		<a href="{{ path('app_service_edit', {'id': service.id}) }}">edit</a>
+
+		{{ include('service/_delete_form.html.twig') }}
+	</div>
+{% endblock %}
