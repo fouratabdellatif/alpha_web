@@ -36,6 +36,7 @@ class Remorquage
     /**
      * @var string
      * @Assert\NotBlank(message="Email is required")
+     * @Assert\Email
      * @ORM\Column(type="string", length=255)
      */
     private $emailRemorquage;
